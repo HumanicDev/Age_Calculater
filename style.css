@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 20px;
+  overflow-x: hidden;
 }
 
 .container {
@@ -22,6 +23,7 @@ body {
   max-width: 850px;
   overflow: hidden;
   animation: fadeIn 0.8s ease-out;
+  margin: 20px;
 }
 
 @keyframes fadeIn {
@@ -79,27 +81,151 @@ h1 {
   gap: 35px;
 }
 
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 12px;
+/* Improved Mobile Responsiveness */
+@media (max-width: 900px) {
+  body {
+    padding: 10px;
+    display: block;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 15px;
+  }
+
+  .header {
+    padding: 20px 15px;
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 24px;
+    padding-right: 40px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  input[type="date"] {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .calculate-btn {
+    padding: 15px;
+    font-size: 18px;
   }
 
   .result-card {
-    padding: 14px;
-    margin-bottom: 18px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .result-card h3 {
+    font-size: 20px;
+  }
+
+  .age-result {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
   }
 
   .age-box {
-    width: 90%;
-    margin: 0 auto 10px auto;
+    width: 30%;
+    padding: 15px;
+  }
+
+  .age-box h4 {
+    font-size: 14px;
+  }
+
+  .age-box p {
+    font-size: 24px;
+  }
+
+  .additional-info {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .info-box {
     padding: 12px;
+  }
+
+  .info-box h4 {
+    font-size: 13px;
+  }
+
+  .info-box p {
+    font-size: 15px;
+    word-break: break-word;
+  }
+
+  .footer {
+    padding: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .content {
+    padding: 15px 10px;
+    gap: 15px;
+  }
+
+  input[type="date"] {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .calculate-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .result-card {
+    padding: 15px;
+  }
+
+  .result-card h3 {
     font-size: 18px;
+  }
+
+  .age-box {
+    padding: 12px;
+  }
+
+  .age-box h4 {
+    font-size: 12px;
+  }
+
+  .age-box p {
+    font-size: 20px;
   }
 
   .additional-info {
@@ -107,20 +233,12 @@ h1 {
     gap: 10px;
   }
 
-  label {
-    font-size: 15px;
-    margin-bottom: 7px;
-  }
-
-  input[type="date"] {
-    font-size: 15px;
-    padding: 10px;
-  }
-
-  .calculate-btn {
-    font-size: 16px;
-    padding: 12px;
-    gap: 8px;
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
 
@@ -272,18 +390,21 @@ input[type="date"]:focus {
   border-radius: 10px;
   text-align: center;
   border: 1px solid #eee;
+  overflow: hidden;
 }
 
 .info-box h4 {
   color: #6a11cb;
   margin-bottom: 8px;
   font-size: 14px;
+  word-break: break-word;
 }
 
 .info-box p {
   color: #333;
   font-weight: 600;
   font-size: 16px;
+  word-break: break-word;
 }
 
 .footer {
@@ -323,6 +444,7 @@ input[type="date"]:focus {
   color: white;
   font-size: 20px;
   transition: background 0.3s;
+  z-index: 10;
 }
 
 .theme-toggle:hover {
@@ -375,4 +497,3 @@ input[type="date"]:focus {
 .dark-mode label {
   color: #e9ecef;
 }
-
