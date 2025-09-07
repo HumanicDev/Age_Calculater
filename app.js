@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("calculate-btn")
     .addEventListener("click", calculateAge);
 
+  // Hide error when user changes birthdate
+  document.getElementById("birthdate").addEventListener("input", function () {
+    document.getElementById("error-msg").style.display = "none";
+  });
+
   // Theme toggle
   document
     .getElementById("theme-toggle")
