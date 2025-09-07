@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Age Calculator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <h1><i class="fas fa-calculator"></i> Modern Age Calculator</h1>
+        <p>Discover your exact age with our advanced calculator</p>
+      </div>
+
+      <div class="content">
+        <div class="input-section">
+          <div class="input-group">
+            <label for="birthdate"
+              ><i class="fas fa-calendar-day"></i> Select Your Birthdate</label
+            >
+            <input type="date" id="birthdate" max="" />
+          </div>
+
+          <div class="input-group">
+            <label for="compare-date"
+              ><i class="fas fa-calendar-check"></i> Compare To
+              (Optional)</label
+            >
+            <input type="date" id="compare-date" max="" />
+          </div>
+
+          <button class="calculate-btn" id="calculate-btn">
+            <i class="fas fa-calculator"></i> Calculate My Age
+          </button>
+
+          <div class="error" id="error-msg">
+            Please select a valid date of birth!
+          </div>
+        </div>
+
+        <div class="result-section">
+          <div class="result-card">
+            <h3><i class="fas fa-user-clock"></i> Your Age</h3>
+            <div class="age-result">
+              <div class="age-box">
+                <h4>YEARS</h4>
+                <p id="years">0</p>
+              </div>
+              <div class="age-box">
+                <h4>MONTHS</h4>
+                <p id="months">0</p>
+              </div>
+              <div class="age-box">
+                <h4>DAYS</h4>
+                <p id="days">0</p>
+              </div>
+            </div>
+
+            <div class="additional-info">
+              <div class="info-box">
+                <h4>TOTAL MONTHS</h4>
+                <p id="total-months">0</p>
+              </div>
+              <div class="info-box">
+                <h4>TOTAL WEEKS</h4>
+                <p id="total-weeks">0</p>
+              </div>
+              <div class="info-box">
+                <h4>TOTAL DAYS</h4>
+                <p id="total-days">0</p>
+              </div>
+              <div class="info-box">
+                <h4>DAY OF WEEK</h4>
+                <p id="day-of-week">Monday</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <h3><i class="fas fa-birthday-cake"></i> Next Birthday</h3>
+            <div class="additional-info">
+              <div class="info-box">
+                <h4>NEXT BIRTHDAY</h4>
+                <p id="next-birthday-date">Jan 1, 2024</p>
+              </div>
+              <div class="info-box">
+                <h4>COUNTDOWN</h4>
+                <p id="countdown">365 days</p>
+              </div>
+              <div class="info-box">
+                <h4>AGE WILL BE</h4>
+                <p id="next-age">25 years</p>
+              </div>
+              <div class="info-box">
+                <h4>ZODIAC SIGN</h4>
+                <p id="zodiac-sign">Capricorn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>© 2025 Modern Age Calculator | Create by Bimal Baski</p>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
