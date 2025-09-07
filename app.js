@@ -110,16 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
       birthdate.getMonth(),
       birthdate.getDate()
     );
+
+    // If birthday already passed this year, set to next year
     if (nextBirthday < compareDate) {
       nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
     }
 
-    const daysUntilBirthday = Math.floor(
+    const daysUntilBirthday = Math.ceil(
       (nextBirthday - compareDate) / (1000 * 60 * 60 * 24)
     );
     document.getElementById(
       "countdown"
-    ).textContent = `${daysUntilBirthday} days`;
+    ).textContent = `${daysUntilBirthday} day${
+      daysUntilBirthday !== 1 ? "s" : ""
+    }`;
 
     // Format next birthday date
     const options = { month: "short", day: "numeric", year: "numeric" };
@@ -127,7 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
       nextBirthday.toLocaleDateString("en-US", options);
 
     // Calculate age at next birthday
-    document.getElementById("next-age").textContent = `${years + 1} years`;
+    const nextAge = nextBirthday.getFullYear() - birthdate.getFullYear();
+    document.getElementById("next-age").textContent = `${nextAge} years`;
 
     // Calculate zodiac sign
     document.getElementById("zodiac-sign").textContent =
